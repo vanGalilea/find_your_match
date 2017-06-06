@@ -10,4 +10,6 @@ class PagesController < ApplicationController
     @user.toggle_admin
   end
 
+  def day_match
+  end
 end

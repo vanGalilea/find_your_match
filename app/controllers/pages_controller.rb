@@ -5,4 +5,9 @@ class PagesController < ApplicationController
   def settings
     @users = User.all
   end
+
+  def toggle
+    @user.toggle_admin
+  end
+
 end

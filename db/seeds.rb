@@ -3,8 +3,3 @@ user2 = User.create!(email: "user2@user.com", password:"abc123", name: "Joe",adm
 user3 = User.create!(email: "user3@user.com", password:"abc123", name: "John",admin: false)
 user4 = User.create!(email: "user4@user.com", password:"abc123", name: "Pit",admin: false)
 user5 = User.create!(email: "user5@user.com", password:"abc123", name: "Smith",admin: false)
-
-match1 = Match.create!(user: user3, matched_user: user2, total_matches: 1)
-match2 = Match.create!(user: user5, matched_user: user4, total_matches: 1)
-match3 = Match.create!(user: user2, matched_user: user4, total_matches: 1)
-match4 = Match.create!(user: user3, matched_user: user5, total_matches: 1)

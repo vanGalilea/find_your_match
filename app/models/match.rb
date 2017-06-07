@@ -21,11 +21,35 @@ class Match < ApplicationRecord
     { matched_user_id: user_id, user_id: matched_user_id }
   end
 
-  def generate_matches
-
-  end
-
   def self.matches_per_day(date)
-    Match.where('created_at < ? AND created_at > ?',date.end_of_day , date.beginning_of_day)
+    self.where('created_at < ? AND created_at > ?',date.end_of_day , date.beginning_of_day)
   end
+
+  def generate_match_of_today
+    @students = User.return_students
+    @students = @students.shuffle
+    loop_through_students
+
+  end
+
+  def loop_through_students
+    if @students.first.matched_user_ids.include?(@students.second.id)
+      if @students.length <= 3
+        match_call_back
+        generate_match_of_today
+      end
+      @students.shuffle
+      loop_through_students
+    else
+      Match.create(user: @students.first, matched_user:@students.second)
+      @students = @students.drop(2)
+      loop_through_students
+      puts Match.matches_per_day(Time.now)
+    end
+  end
+
+  def match_call_back
+
+  end
+
 end

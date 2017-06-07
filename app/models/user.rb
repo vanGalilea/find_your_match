@@ -10,4 +10,7 @@ class User < ApplicationRecord
     admin ? self.admin = false : self.admin = true
   end
 
+  def self.return_students
+      self.where(admin: false)
+  end
 end

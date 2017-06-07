@@ -21,17 +21,11 @@ class Match < ApplicationRecord
     { matched_user_id: user_id, user_id: matched_user_id }
   end
 
-
-
-
-
-
-
   def generate_matches
 
   end
 
-  def method_name
-
+  def self.matches_per_day(date)
+    Match.where('created_at < ? AND created_at > ?',date.end_of_day , date.beginning_of_day)
   end
 end

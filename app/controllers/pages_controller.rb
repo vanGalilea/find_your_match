@@ -30,7 +30,7 @@ class PagesController < ApplicationController
       @students.each do |student|
         student.matched_user_ids = []
       end
-      puts "***************CYCLE!!!!!******************"
+      puts "***************CYCLE!!!!!***********************************************************"
     end
   end
 
@@ -40,7 +40,7 @@ class PagesController < ApplicationController
       @students = @students.shuffle
       loop_through_students
     elsif @students.length <= 3 && @students.first.matched_user_ids.include?(@students.second.id)
-      match_call_back
+      match_call_back #should be changed to destroy the last day in our terms, like "iteration"
       generate_match_of_today
     else
       Match.create(user: @students.first, matched_user:@students.second)
@@ -48,7 +48,7 @@ class PagesController < ApplicationController
       if @students.length > 0
         loop_through_students
       else
-        puts "*******************************************"
+        puts "*****************DAY!!!!**********************************************"
       end
     end
   end

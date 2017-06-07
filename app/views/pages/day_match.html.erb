@@ -1,5 +1,6 @@
 <h2>Daily Match: </h2>
 
+
 <% matches_of_the_day = Match.matches_per_day(Time.now) %>
 <% matches_of_the_day.each_with_index do |match, i| %>
   <% if i%2==0 %>

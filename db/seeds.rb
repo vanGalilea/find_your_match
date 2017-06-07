@@ -3,3 +3,7 @@ user2 = User.create!(email: "user2@user.com", password:"abc123", name: "Joe",adm
 user3 = User.create!(email: "user3@user.com", password:"abc123", name: "John",admin: false)
 user4 = User.create!(email: "user4@user.com", password:"abc123", name: "Pit",admin: false)
 user5 = User.create!(email: "user5@user.com", password:"abc123", name: "Smith",admin: false)
+user6 = User.create!(email: "user6@user.com", password:"abc123", name: "Joanne",admin: false)
+user7 = User.create!(email: "user7@user.com", password:"abc123", name: "Johnny",admin: false)
+# user8 = User.create!(email: "user8@user.com", password:"abc123", name: "Pepita",admin: false)
+# user9 = User.create!(email: "user9@user.com", password:"abc123", name: "Smarmy",admin: false)

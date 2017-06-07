@@ -25,7 +25,17 @@ class PagesController < ApplicationController
     end
   end
 
+  def check_cycle
+    if @students.first.matched_user_ids.length == @cycle_turns
+      @students.each do |student|
+        student.matched_user_ids = []
+      end
+      puts "*********************************"
+    end
+  end
+
   def loop_through_students
+    check_cycle
     if @students.first.matched_user_ids.include?(@students.second.id)
       if @students.length <= 3
         match_call_back
@@ -36,7 +46,11 @@ class PagesController < ApplicationController
     else
       Match.create(user: @students.first, matched_user:@students.second)
       @students = @students.drop(2)
-      loop_through_students if @students.length > 0
+      if @students.length > 0
+        loop_through_students
+      else
+        puts "*******************************************"
+      end
     end
   end
 
@@ -46,6 +60,7 @@ class PagesController < ApplicationController
 
   def generate_match_of_today
     @students = User.return_students
+    @cycle_turns = @students.length-1
     @students = @students.shuffle
     loop_through_students
   end

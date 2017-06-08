@@ -7,3 +7,18 @@ user6 = User.create!(email: "user6@user.com", password:"abc123", name: "Joanne",
 user7 = User.create!(email: "user7@user.com", password:"abc123", name: "Johnny",admin: false)
 # user8 = User.create!(email: "user8@user.com", password:"abc123", name: "Pepita",admin: false)
 # user9 = User.create!(email: "user9@user.com", password:"abc123", name: "Smarmy",admin: false)
+# match10 = Match.create!(user_id: user2.id, matched_user_id: user6.id, created_at: Time.now-4.days)
+# match11 = Match.create!(user_id: user3.id, matched_user_id: user5.id, created_at: Time.now-4.days)
+# match12 = Match.create!(user_id: user7.id, matched_user_id: user4.id, created_at: Time.now-4.days)
+#
+# match7 = Match.create!(user_id: user2.id, matched_user_id: user5.id, created_at: Time.now-3.days)
+# match8 = Match.create!(user_id: user3.id, matched_user_id: user7.id, created_at: Time.now-3.days)
+# match9 = Match.create!(user_id: user6.id, matched_user_id: user4.id, created_at: Time.now-3.days)
+#
+# match1 = Match.create!(user_id: user2.id, matched_user_id: user4.id, created_at: Time.now-2.days)
+# match2 = Match.create!(user_id: user3.id, matched_user_id: user6.id, created_at: Time.now-2.days)
+# match3 = Match.create!(user_id: user5.id, matched_user_id: user7.id, created_at: Time.now-2.days)
+#
+# match4 = Match.create!(user_id: user2.id, matched_user_id: user3.id, created_at: Time.now-1.days)
+# match5 = Match.create!(user_id: user4.id, matched_user_id: user5.id, created_at: Time.now-1.days)
+# match6 = Match.create!(user_id: user6.id, matched_user_id: user7.id, created_at: Time.now-1.days)

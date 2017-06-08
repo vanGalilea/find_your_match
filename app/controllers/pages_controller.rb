@@ -30,7 +30,7 @@ class PagesController < ApplicationController
       @students.each do |student|
         student.matched_user_ids = []
       end
-      puts "***************CYCLE!!!!!******************"
+      puts "***************CYCLE!!!!!***********************************************************"
     end
   end
 
@@ -48,7 +48,7 @@ class PagesController < ApplicationController
       if @students.length > 0
         loop_through_students
       else
-        puts "*******************************************"
+        puts "*****************DAY!!!!**********************************************"
       end
     end
   end

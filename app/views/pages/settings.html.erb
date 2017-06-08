@@ -1,7 +1,7 @@
 <h2>Admin Settings</h2>
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.name %>, <%= user.email %></li>
-    <%= user.admin ? "demote to student" : "promote to admin" %>
+    <li id="<%= user.id%>"><%= user.name %>, <%= user.email %>
+    <p status="<%=user.admin%>"class="toggle_admin btn btn-primary"><%= user.admin ? "demote to student" : "promote to admin"%></p></li>
   <% end %>
 </ul>

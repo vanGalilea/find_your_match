@@ -5,8 +5,9 @@ user4 = User.create!(email: "user4@user.com", password:"abc123", name: "Pit",adm
 user5 = User.create!(email: "user5@user.com", password:"abc123", name: "Smith",admin: false)
 user6 = User.create!(email: "user6@user.com", password:"abc123", name: "Joanne",admin: false)
 user7 = User.create!(email: "user7@user.com", password:"abc123", name: "Johnny",admin: false)
-# user8 = User.create!(email: "user8@user.com", password:"abc123", name: "Pepita",admin: false)
-# user9 = User.create!(email: "user9@user.com", password:"abc123", name: "Smarmy",admin: false)
+user8 = User.create!(email: "user8@user.com", password:"abc123", name: "Pepita",admin: false)
+user9 = User.create!(email: "user9@user.com", password:"abc123", name: "Smarmy",admin: false)
+
 # match10 = Match.create!(user_id: user2.id, matched_user_id: user6.id, created_at: Time.now-4.days)
 # match11 = Match.create!(user_id: user3.id, matched_user_id: user5.id, created_at: Time.now-4.days)
 # match12 = Match.create!(user_id: user7.id, matched_user_id: user4.id, created_at: Time.now-4.days)

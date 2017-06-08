@@ -1,0 +1,10 @@
+<%= link_to "Generate pairs for today", day_match_path,  class:"btn btn-primary btn-lg"%>
+
+<% matches_of_the_day = Match.matches_per_day(Time.now) %>
+
+<% matches_of_the_day.each_with_index do |match, i| %>
+  <% if i%2==0 %>
+    <h4><%= match.user.name %><%= match.user.id %>, <%= match.matched_user.name %><%= match.matched_user.id %></h4>
+    <p>_________________________________________</p>
+  <% end %>
+<% end %>

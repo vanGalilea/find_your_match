@@ -1,42 +1,28 @@
-function checkAdmin(){
-  var adminstatus = $(event.target).attr('status');
-    if (adminstatus == "true") {
-      return "demote to student";
-    } else {
-      return "promote to admin";
-    };
-};
-
 $(document).ready(function() {
+  var changeRole = $(".toggle_admin");
 
-  var changeRole = $('.toggle_admin');
-
-  changeRole.on('click', function(event) {
+  changeRole.on("click", function(event) {
     event.preventDefault();
 
-    changeRole.attr('disabled', 'disabled');
+    changeRole.attr("disabled", "disabled");
 
-    var userId = $(event.target).parent().attr('id');
+    var userId = $(event.target).parent().attr("id");
 
-    var url = "/settings/" + userId + ".json"
-    var token = $('input[name=authenticity_token]').val();
-    var user = $(event.target)
+    var url = "/settings/" + userId + ".json";
+    var token = $("input[name=authenticity_token]").val();
+    var user = $(event.target);
 
     $.ajax({
       url: url,
-      type: 'PUT',
-      contentType: 'application/json',
+      type: "PUT",
+      contentType: "application/json",
       data: JSON.stringify({
-
-        authenticity_token: token,
-
+        authenticity_token: token
       }),
-      dataType: 'json',
-    })
-    .done(function(data) {
-      debugger;
-      $(event.target).text(checkAdmin);
-      changeRole.attr('disabled', false);
-    })
+      dataType: "json"
+    }).done(function(data) {
+      $(event.target).attr("admin", data.admin);
+      changeRole.attr("disabled", false);
+    });
   });
-})
+});

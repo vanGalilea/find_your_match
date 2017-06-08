@@ -6,6 +6,20 @@ class PagesController < ApplicationController
     @date = Date.new
   end
 
+  def settings_update
+    @user = User.find(params[:id])
+    @user.toggle_admin
+    @user.save
+    
+    respond_to do |format|
+      format.html { render action: :settings }
+      format.json { render json: @user }
+    end
+
+
+
+  end
+
   def settings
     @users = User.all
   end

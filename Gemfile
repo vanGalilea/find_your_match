@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'devise', '~> 4.2'
+gem 'bootstrap-datepicker-rails'
+
+
 
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'

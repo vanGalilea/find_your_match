@@ -1,0 +1,6 @@
+<% match = Match.matches_per_day_per_user(Time.now, current_user.id) %>
+
+<h4>
+  <%= match.first.user.name %>(<%= match.first.user.id %>),
+  <%= match.first.matched_user.name %>(<%= match.first.matched_user.id %>)
+</h4>

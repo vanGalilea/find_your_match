@@ -34,7 +34,7 @@ $(document).ready(function() {
       dataType: 'json',
     })
     .done(function(data) {
-
+      debugger;
       $(event.target).text(checkAdmin);
       changeRole.attr('disabled', false);
     })

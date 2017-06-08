@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>Daily Match: </h2>
+
+<!-- <%= date_select(@date, 'date') %> -->
+
+<!-- after pressing the button once we would like to disable it -->
+<!-- button not showed in history dates -->
+
+<%= link_to "Generate pairs for today", day_match_path,  class:"btn btn-primary btn-lg"%>
+
+
+<% matches_of_the_day = Match.matches_per_day(Time.now) %>
+
+<% matches_of_the_day.each_with_index do |match, i| %>
+  <% if i%2==0 %>
+    <h4><%= match.user.name %><%= match.user.id %>, <%= match.matched_user.name %><%= match.matched_user.id %></h4>
+    <p>_________________________________________</p>
+  <% end %>
+<% end %>

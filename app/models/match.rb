@@ -25,6 +25,10 @@ class Match < ApplicationRecord
     self.where('created_at < ? AND created_at > ?',date.end_of_day , date.beginning_of_day)
   end
 
+  def self.matches_history
+    self.where('created_at < ?',Time.now - 1.days)
+  end
+
   def self.matches_per_user(id_user)
     self.where(user_id: id_user)
   end

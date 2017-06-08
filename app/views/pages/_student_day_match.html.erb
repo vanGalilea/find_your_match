@@ -1,5 +1,20 @@
+
+<p>Matches History: </p>
+
+<% if  Match.count > 0%>
+  <% matches_history = Match.matches_history.matches_per_user(current_user.id) %>
+
+  <% matches_history.each_with_index do |match, i| %>
+  <h4>
+    <%= match.user.name %>(<%= match.user.id %>),
+    <%= match.matched_user.name %>(<%= match.matched_user.id %>)
+  </h4>
+  <% end %>
+<% end %>
+
 <% match = Match.matches_per_user(current_user.id).matches_per_day(Time.now) %>
 
+<p>Matches of the day: </p>
 <h4>
   <%= match.first.user.name %>(<%= match.first.user.id %>),
   <%= match.first.matched_user.name %>(<%= match.first.matched_user.id %>)

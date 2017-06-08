@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     @user = User.find(params[:id])
     @user.toggle_admin
     @user.save
-    
+
     respond_to do |format|
       format.html { render action: :settings }
       format.json { render json: @user }

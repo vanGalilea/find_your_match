@@ -1,11 +1,25 @@
-<h2>Admin Settings</h2>
-<ul>
-  <% @users.each do |user| %>
-    <li id="<%= user.id%>">
-      <%= user.name %>, <%= user.email %> (<%= user.admin ? "Admin" : "Student" %>)
-      <p admin=<%=user.admin%> class="toggle_admin btn btn-primary">
-        promote/demote
-      </p>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Admin Settings
+      </div>
+      <div class="row">
+        <ul>
+          <% @users.each do |user| %>
+            <div class="col-md-5 col-md-offset-2">
+              <li id="<%= user.id%>">
+                <%= user.name %>, <%= user.email %>
+              </li>
+            </div>
+            <div class="col-md-2" id="<%= user.id%>">
+              <p id="<%= user.id%>" admin=<%=user.admin%> class="toggle_admin btn btn-primary">
+                <%= user.admin ? "Demote" : "Promote" %>
+              </p>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

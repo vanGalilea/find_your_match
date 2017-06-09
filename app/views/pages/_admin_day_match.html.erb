@@ -35,7 +35,7 @@
       </div>
 
       <% matches_of_the_day = Match.matches_per_day(Time.now) %>
-      <div class="row">
+      <div class="row" id="todays-matches">
         <% if matches_of_the_day.count > 0 %>
           <% matches_of_the_day.each_with_index do |match, i| %>
             <% if i%2==0 %>

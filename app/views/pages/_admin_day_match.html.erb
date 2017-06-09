@@ -4,7 +4,6 @@
       <div class="panel-heading text-center">
         <h3>Daily Matches</h3>
       </div>
-
       <% matches_of_the_day = Match.matches_per_day(Time.now) %>
       <div class="row" id="todays-matches">
         <% if matches_of_the_day.count > 0 %>
@@ -36,11 +35,10 @@
     <div class="panel panel-primary">
       <div class="panel-heading text-center">
         <h3>Matches History:</h3>
-      </div>
-
+      </div>      
       <div class="row">
-        <% if  Match.count > 0%>
-          <% matches_history = Match.matches_history %>
+        <% matches_history = Match.matches_history %>
+        <% if  matches_history.count > 0 %>
           <% matches_history.each_with_index do |match, i| %>
             <% if i%2==0 %>
 

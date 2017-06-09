@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
     email    { Faker::Internet.email }
-    encrypted_password { Faker::Internet.password(8) }
+    password { Faker::Internet.password }
     matched_user_ids []
 
     trait :student do

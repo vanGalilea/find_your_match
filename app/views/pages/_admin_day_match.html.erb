@@ -6,8 +6,8 @@
       </div>
 
       <div class="row">
-        <% if  Match.count > 0%>
-          <% matches_history = Match.matches_history %>
+        <% matches_history = Match.matches_history %>
+        <% if  matches_history.count > 0%>
           <% matches_history.each_with_index do |match, i| %>
             <% if i%2==0 %>
 

@@ -6,8 +6,8 @@
       </div>
 
       <div class="row">
-        <% if  Match.matches_history.count > 0%>
-            <% matches_history = Match.matches_history.matches_per_user(current_user.id) %>
+        <% matches_history = Match.matches_history.matches_per_user(current_user.id) %>
+        <% if  matches_history.count > 0%>
             <% matches_history.each_with_index do |match, i| %>
               <div class="col-md-4">
                 <h5>
@@ -36,8 +36,8 @@
       </div>
 
       <div class="row">
-        <% if  Match.matches_per_day(Time.now).count > 0%>
-          <% match = Match.matches_per_user(current_user.id).matches_per_day(Time.now) %>
+        <% match = Match.matches_per_user(current_user.id).matches_per_day(Time.now) %>
+        <% if  match.count > 0%>
           <div class="col-md-8">
             <h4>
               <%= match.first.user.name %>(<%= match.first.user.id %>),

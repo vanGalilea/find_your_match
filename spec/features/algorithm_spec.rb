@@ -9,14 +9,11 @@ require 'rails_helper'
     let!(:user) { create :user, name: "Anna", password: "test123", admin: true}
     let!(:user5) { create :user, name: "Bernie", password: "test123", admin: true}
 
-    it "returns unique pairs" do
+    it "returns students on the page" do
       visit root_path
       click_link("Generate pairs for today")
 
-      expect(page).to have_content("Bob")
-      expect(page).to have_content ("Roderick")
-      expect(page).to have_content ("Hans")
-      expect(page).to have_content ("Cilia")
+      page.should have_content("Bob", "Roderick", "Hans", "Cilia")
     end
 
     it "does not show admins in student list" do
@@ -29,7 +26,6 @@ require 'rails_helper'
       expect(page).to have_content ("Cilia")
       expect(page).to_not have_content("Anna")
       expect(page).to_not have_content("Bernie")
-
     end
 
   end

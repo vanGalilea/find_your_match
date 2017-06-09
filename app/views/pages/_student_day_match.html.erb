@@ -8,7 +8,7 @@
       <div class="row">
         <% match = Match.matches_per_user(current_user.id).matches_per_day(Time.now) %>
         <% if  match.count > 0 %>
-            <% matches_history.each_with_index do |match, i| %>
+            <% match.each_with_index do |match, i| %>
               <div class="col-md-4">
                 <h5>
                   <%= match.user.name %>(<%= match.user.id %>),
@@ -21,13 +21,6 @@
               </div>
           <% end %>
         <% else %>
-          <div class="col-md-8">
-            <h4>
-              <%= match.first.user.name %>(<%= match.first.user.id %>),
-              <%= match.first.matched_user.name %>(<%= match.first.matched_user.id %>)
-            </h4>
-          </div>
-          <% else %>
             <div class="col-md-12 text-center">
               <h4>Pairs haven't been generated for this day, please contact your teacher</h4>
             </div>

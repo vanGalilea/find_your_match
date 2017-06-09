@@ -22,6 +22,7 @@ $(document).ready(function() {
       dataType: "json"
     }).done(function(data) {
       $(event.target).attr("admin", data.admin);
+      data.admin ? $(event.target).html("Demote") : $(event.target).html("Promote");
       changeRole.attr("disabled", false);
     });
   });

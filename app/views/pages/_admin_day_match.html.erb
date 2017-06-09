@@ -1,39 +1,8 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-primary">
-      <div class="panel-heading">
-        Matches History:
-      </div>
-
-      <div class="row">
-        <% if  Match.count > 0%>
-          <% matches_history = Match.matches_history %>
-          <% matches_history.each_with_index do |match, i| %>
-            <% if i%2==0 %>
-
-              <div class="col-md-4">
-                <h5>
-                  <%= match.user.name %> (<%= match.user.id %>),
-                  <%= match.matched_user.name %> (<%= match.matched_user.id %>)
-                </h5>
-              </div>
-              
-              <div class="col-md-2">
-                <%= match.created_at.to_date %>
-              </div>
-            <% end %>
-          <% end %>
-        <% else %>
-          <div class="col-md-8">
-            <p>No history to show yet</p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        Daily Matches
+      <div class="panel-heading text-center">
+        <h3>Daily Matches</h3>
       </div>
 
       <% matches_of_the_day = Match.matches_per_day(Time.now) %>
@@ -50,11 +19,42 @@
             <% end %>
           <% end %>
         <% else %>
-          <div class="col-md-6 col-md-offset-2 text-center">
+          <div class="col-md-6 col-md-offset-3 text-center">
             <h5>Pairs haven't been generated for this day, you can generate the pairs for today here below</h5>
           </div>
-          <div class="col-md-8 col-md-offset-3">
+          <div class="col-md-8 col-md-offset-4">
             <%= link_to "Generate pairs for today", day_match_path,  class:"btn btn-primary btn-lg", id: "generate-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading text-center">
+        <h3>Matches History:</h3>
+      </div>
+
+      <div class="row">
+        <% if  Match.count > 0%>
+          <% matches_history = Match.matches_history %>
+          <% matches_history.each_with_index do |match, i| %>
+            <% if i%2==0 %>
+
+              <div class="col-md-4">
+                <h5>
+                  <%= match.user.name %> (<%= match.user.id %>),
+                  <%= match.matched_user.name %> (<%= match.matched_user.id %>)
+                </h5>
+              </div>
+
+              <div class="col-md-2">
+                <p><%= match.created_at.to_date %></p>
+              </div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <div class="col-md-8">
+            <p>No history to show yet</p>
           </div>
         <% end %>
       </div>

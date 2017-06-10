@@ -40,7 +40,7 @@ class PagesController < ApplicationController
       @students = @students.shuffle
       loop_through_students
     elsif @students.length <= 3 && @students.first.matched_user_ids.include?(@students.second.id)
-      match_call_back #should be changed to destroy the last day in our terms, like "iteration"
+      match_call_back
       generate_match_of_today
     else
       Match.create(user: @students.first, matched_user:@students.second)

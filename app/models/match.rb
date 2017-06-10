@@ -25,9 +25,4 @@ class Match < ApplicationRecord
     self.where('created_at < ? AND created_at > ?',date.end_of_day , date.beginning_of_day)
   end
 
-  def self.destroy_last_iteration_matches(pair_num)
-    #####################################loop pair_num times
-    self.last.destory
-  end
-
 end

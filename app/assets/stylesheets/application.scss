@@ -1,2 +1,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background: linear-gradient(to bottom, #71cad1, #527563) no-repeat center center fixed;
+}
+
+  .navbar-default{
+    background-color:rgba(0,0,0, 0.6);
+    color: black;
+    font-weight: bold;
+}
+
+.panel-primary, .panel-default{
+     background-color:rgba(0, 0, 0, 0.3);
+}
+
+.panel-primary .panel-heading, .panel-default .panel-heading  {
+  background-color:rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.panel-body a {
+  color: black;
+}
+
+.glyphicon {
+    font-size: 25px;
+    padding: 7px;
+}

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-  describe "Algorithm sets up matches without putting a user in 2 teams" do
+  describe "Algorithm sets up matches without putting a student in 2 teams" do
     before { login_as user }
     let!(:user1) { create :user, name: "Bob", password: "test123", admin: false }
     let!(:user2) { create :user, name: "Roderick", password: "test123", admin: false }
@@ -13,9 +13,10 @@ require 'rails_helper'
       visit root_path
       click_link("Generate pairs for today")
 
-      expect(page).to contain_exactly("Bob", "Roderick", "Hans", "Cilia")
-      expect(page).to_not contain_exactly("Bob", "Bob", "Roderick", "Hans", "Cilia")
-
+      expect(page).to have_content("Bob")
+      expect(page).to have_content ("Roderick")
+      expect(page).to have_content ("Hans")
+      expect(page).to have_content ("Cilia")
     end
 
     it "does not show admins in student list" do

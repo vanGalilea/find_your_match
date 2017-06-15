@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 body {
-  background: linear-gradient(to bottom, #71cad1, #527563) no-repeat center center fixed;
+  background: linear-gradient(to bottom, #ffffff, #8aa3ff) no-repeat center center fixed;
 }
 
   .navbar-default{
@@ -27,4 +27,8 @@ body {
 .glyphicon {
     font-size: 25px;
     padding: 7px;
+}
+
+#generate-btn {
+  margin: 15px;
 }

@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe "validations" do
+
+  describe "relations" do
     it { is_expected.to have_many (:matches) }
     it { is_expected.to have_many (:matched_users) }
   end
